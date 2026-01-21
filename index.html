@@ -16,19 +16,19 @@
 
 <body>
     <header>
-        <h1 class="textLogo">TSK- M</h1>
+        <h1 class="textLogo">🔷 TSK- M</h1>
         <i class="bi bi-list" id="menu-icon"></i>
 
         <ul class="menu" id="menu">
-            <li><a href="index.html">INÍCIO <i class="bi bi-house-fill"></i></a></li>
+            <li><a href="#inicio">INÍCIO <i class="bi bi-house-fill"></i></a></li>
             <li><a href="#academia">ACADEMIA <i class="bi bi-ubuntu"></i></a></li>
-            <li><a href="#">FINANÇAS <i class="bi bi-currency-dollar"></i></a></li>
-            <li><a href="#">YESHUA <i class="bi bi-calendar-range-fill"></i></a></li>
+            <li><a href="#finanças">FINANÇAS <i class="bi bi-currency-dollar"></i></a></li>
+            <li><a href="#yeshua">YESHUA <i class="bi bi-calendar-range-fill"></i></a></li>
         </ul>
         <button class="btnTask" id="taskBtn"> GRADE</button>
     </header>
 
-    <h1 class="textTask">TASK <span>MANAGER</span></h1>
+    <h1 class="textTask" id="inicio">TASK <span>MANAGER</span></h1>
     <section class="container">
         <h2>To do List</h2>
         <div class="box">
@@ -45,22 +45,22 @@
     <section class="hero" id="academia">
         <div class="mid">
             <img src="images/imgGym1.avif" alt="" class="imgGym">
-            <p>SEGUNDA-FEIRA <span>BÍCEPS</span></p>
+            <p>SEGUNDA-FEIRA | <span>BÍCEPS</span></p>
             <button class="btnGym">Ver Treino <i class="bi bi-arrow-right"></i></button>
         </div>
         <div class="mid">
             <img src="images/imgGym2.avif" alt="" class="imgGym">
-            <p>TERÇA-FEIRA <span>PEITO</span></p>
+            <p>TERÇA-FEIRA | <span>PEITO</span></p>
             <button class="btnGym">Ver Treino <i class="bi bi-arrow-right"></i></button>
         </div>
         <div class="mid">
             <img src="images/imgGym3.avif" alt="" class="imgGym">
-            <p>QUARTA-FEIRA <span>PERNA</span></p>
+            <p>QUARTA-FEIRA | <span>PERNA</span></p>
             <button class="btnGym">Ver Treino <i class="bi bi-arrow-right"></i></button>
         </div>
         <div class="mid">
             <img src="images/imgGym4.avif" alt="" class="imgGym">
-            <p>QUINTA-FEIRA <span>COSTAS</span></p>
+            <p>QUINTA-FEIRA | <span>COSTAS</span></p>
             <button class="btnGym">Ver Treino <i class="bi bi-arrow-right"></i></button>
         </div>
     </section>
@@ -70,7 +70,7 @@
           FLUXO <i class="bi bi-currency-exchange" id="iconCash"></i>
         </h1>
       
-        <div class="cash-box">
+        <div class="cash-box" id="finanças">
           <input type="number" id="value" placeholder="Valor (R$)">
       
           <div class="buttons">
@@ -86,6 +86,53 @@
           </div>
         </div>
       </main>
+
+      <section class="calendar-container" id="yeshua">
+        <h2 class="textYeshua">Yeshua <i class="bi bi-calendar2-heart-fill" id="iconYeshua"></i></h2>
+      
+        <div class="calendar-header">
+          <button id="prevMonth"><i class="bi bi-chevron-left"></i></button>
+          <h3 id="monthYear"></h3>
+          <button id="nextMonth"><i class="bi bi-chevron-right"></i></button>
+        </div>
+      
+        <div class="calendar-weekdays">
+          <span>Dom</span><span>Seg</span><span>Ter</span>
+          <span>Qua</span><span>Qui</span><span>Sex</span><span>Sáb</span>
+        </div>
+      
+        <div class="calendar-days" id="calendarDays"></div>
+      </section>
+      <!-- MODAL ADICIONAR EVENTO -->
+<div class="modal-overlay" id="addEventModal">
+    <div class="modal">
+      <h3>Novo evento</h3>
+  
+      <input 
+        type="text" 
+        id="eventInput" 
+        placeholder="Digite o evento"
+      />
+  
+      <div class="modal-actions">
+        <button class="btn-cancel" id="cancelAddEvent">Cancelar</button>
+        <button class="btn-confirm" id="confirmAddEvent">Confirmar evento</button>
+      </div>
+    </div>
+  </div>
+  
+      <div class="modal-overlay" id="deleteModal">
+        <div class="modal">
+          <h3>Apagar evento</h3>
+          <p>Deseja apagar este evento?</p>
+      
+          <div class="modal-actions">
+            <button class="btn-cancel" id="cancelDelete">Cancelar</button>
+            <button class="btn-delete" id="confirmDelete">Apagar</button>
+          </div>
+        </div>
+      </div>
+      
       
 
     <footer>

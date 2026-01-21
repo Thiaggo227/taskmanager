@@ -12,11 +12,11 @@ body{
   font-family: "Zalando Sans Expanded", sans-serif;
   font-size: 20px;
   font-weight: 900;
-  color: #e9fffc;
+  color: #015aff;
   margin-left: 10px;
 }
 header{
-  background-color: #000000e6;
+  background-color: #ffffff;
   padding: 9px;
   display: flex;
   justify-content: space-between;
@@ -34,13 +34,13 @@ header{
 }
 #menu-icon{
   display: none;
-  color: #e9e9e9;
+  color: #000000e6;
   font-size: 27px;
 }
 li a{
   font-family: "Zalando Sans Expanded", sans-serif;
   text-decoration: none;
-  color: #e9e9e9;
+  color: #000000e6;
   font-size: 11px;
   font-weight: 500;
   position: relative;
@@ -235,17 +235,19 @@ p{
   background-color: #023ca7;
 }
 main{
+  height: 100%;
+  background-color: #000000e6;
   display: flex;             
   flex-direction: column;    
   align-items: center; 
-  margin-top: 60px;
-  padding-top: 30px;
+  margin-top: 70px;
+  padding: 50px;
 }
 .textMain{
   font-family: "Zalando Sans Expanded", sans-serif;
   text-align: center;
   font-size: 40px;
-  color: #000000e6;
+  color: #ffffffe6;
 }
 #iconCash{
   color: #38f163;
@@ -253,11 +255,11 @@ main{
 
 .cash-box{
   width: 100%;
-  max-width: 550px;        
-  background: #fff;
+  max-width: 550px;       
   padding: 30px;           
-  box-shadow: 0 10px 25px #00000049;
   border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 10px 25px #00000049;
   margin-top: 30px; 
 }
 
@@ -328,6 +330,202 @@ main{
 .reset:hover{
   background: #023ca7;
 }
+.calendar-container{
+  max-width: 900px;
+  margin: 80px auto;
+  padding: 30px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px #00000049;
+}
+.textYeshua{
+  font-family: "Zalando Sans Expanded", sans-serif;
+  text-align: center;
+  font-size: 40px;
+}
+#iconYeshua{
+  color: #ff0000;
+}
+.calendar-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+  margin-bottom: 20px;
+}
+
+.calendar-header button{
+  background: #015aff;
+  border: none;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.calendar-weekdays,
+.calendar-days{
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+}
+
+.calendar-weekdays span{
+  text-align: center;
+  font-weight: 700;
+}
+
+.calendar-days div{
+  display: flex;
+  flex-direction: column;
+  height: 90px;
+  border-radius: 6px;
+  padding: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+  position: relative;
+}
+.day-has-event {
+  border: 2px solid #007bff;
+}
+
+
+.calendar-days div:hover{
+  background: #eaf1ff;
+}
+
+.calendar-days .today{
+  border: 2px solid #015aff;
+}
+
+.event{
+  margin-top: auto;
+  margin-bottom: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  text-align: center;
+  color: #015aff;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: default;
+}
+
+.event i{
+  font-size: 13px;
+  color: #ff4d4d;
+  cursor: pointer;
+  opacity: 0;
+  transition: 0.2s;
+}
+
+.event:hover i{
+  opacity: 1;
+}
+/* ===== MODAL ===== */
+.modal-overlay{
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s;
+  z-index: 99999;
+}
+
+.modal-overlay.active{
+  opacity: 1;
+  pointer-events: all;
+}
+
+.modal{
+  background: #fff;
+  padding: 25px 30px;
+  border-radius: 10px;
+  max-width: 320px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+  animation: scaleIn 0.25s ease;
+}
+
+.modal h3{
+  color: #015aff;
+  margin-bottom: 10px;
+}
+
+.modal p{
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.modal-actions{
+  display: flex;
+  gap: 10px;
+}
+
+.modal-actions button{
+  flex: 1;
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+  font-weight: 700;
+  cursor: pointer;
+}
+.btn-cancel,
+.btn-confirm,
+.btn-delete{
+  font-family: "Zalando Sans Expanded", sans-serif;
+}
+
+.btn-cancel{
+  background: #e0e0e0;
+}
+
+.btn-delete{
+  background: #ff4d4d;
+  color: #fff;
+}
+
+@keyframes scaleIn{
+  from{
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to{
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+/* INPUT DO MODAL */
+.modal input{
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  outline: none;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.modal input:focus{
+  border-color: #015aff;
+}
+
+/* BOTÃO CONFIRMAR EVENTO */
+.btn-confirm{
+  background: #015aff;
+  color: #fff;
+}
+
+
+
+
+
 
 
 
@@ -348,7 +546,7 @@ main{
       margin-right: 15px;
   }
   .menu {
-    background-color: #000000e6;
+    background-color: #fffffff1;
     position: fixed;
     top: 50px;
     left: 0;
@@ -375,7 +573,7 @@ main{
     left: 50%;
     transform: translate(-50%, -10px);
     width: 100%;
-    border-radius: 0 0 20px 20px;
+    border-radius: 0 0 10px 10px;
     margin-top: -10px;
     opacity: 0;
     padding: 8px;
@@ -408,7 +606,7 @@ main{
       justify-content: center;
   }
   li a{
-      color: #e9e9e9;
+      color: #000000e6;
   }
   .input-group {
     flex-direction: column; 
@@ -441,6 +639,50 @@ main{
   }
   .textMain{
     font-size: 35px;
+  }
+  
+  .calendar-container{
+    margin: 50px 15px;
+    padding: 20px;
+  }
+
+  .calendar-header h3{
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .calendar-weekdays span{
+    font-size: 11px;
+  }
+
+  .calendar-days{
+    gap: 6px;
+  }
+
+  .calendar-days div{
+    height: 70px;
+    padding: 4px;
+  }
+
+  .calendar-days div strong{
+    font-size: 11px;
+  }
+
+  .event{
+    font-size: 11px;
+    gap: 4px;
+  }
+
+  .event span{
+    max-width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .event i{
+    font-size: 12px;
+    opacity: 1; /* no mobile sempre visível */
   }
 
 }
